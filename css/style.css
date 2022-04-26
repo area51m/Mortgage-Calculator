@@ -1,0 +1,42 @@
+.nav {
+	border-bottom: 1px solid grey;
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+#table .btn {
+	color: black;
+}
+#table .btn:hover {
+	color: white;
+}
+.modal-btns {
+	text-align: right;
+}
+.container {
+	max-width: 90%;
+}
+.calculator {
+	max-width: 600px;
+	min-width: 300px;
+}
+#table td:not(:first-child),
+.table th:not(:first-child),
+h1 {
+	text-align: center;
+}
+.nav .active {
+	background-color: #0dcaf0;
+	border-radius: 0.25rem;
+	color: white;
+	pointer-events: none;
+}
+.nav-link:hover:not(.active) {
+	background-color: #E0FFFF;
+	border-radius: 0.25rem;
+}
+#result {
+	font-weight: bold;
+}
+.add-btn {
+	margin-bottom: 50px;
+}

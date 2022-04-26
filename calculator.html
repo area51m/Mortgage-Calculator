@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+	<title>ElifTech School test task</title>
+</head>
+<body id="body">
+  <div class="container calculator">
+    <h1>Mortgage calculator</h1>
+  	<ul class="nav justify-content-center">
+  	  <li class="nav-item">
+  	    <a class="nav-link" href="home.html">Banks list</a>
+  	  </li>
+  	  <li class="nav-item">
+  	    <a class="nav-link active" aria-current="page" href="calculator.html">Calcularor</a>
+  	  </li>
+  	</ul>
+
+    <form class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="inputGroupSelect" class="form-label"></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">Bank</span>
+          <select class="form-select" id="inputGroupSelect" required>
+            <option selected disabled value="">Choose...</option>
+            <!-- OPTIONS AREA -->
+          </select>
+          <div class="invalid-feedback">
+            Please select a Bank.
+          </div>
+        </div>
+      </div>      
+      <div class="mb-3">
+        <label for="inputLoan" class="form-label"></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">Initial loan</span>          
+          <input type="number" class="form-control" id="inputLoan" min="0" oninput="inputLoan = this.value;" required>
+          <span class="input-group-text">$</span>
+          <div class="invalid-feedback">
+            Please enter Initial loan.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="inputPayment" class="form-label"></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">Down payment</span>
+          <input type="number" class="form-control" min="0" id="inputPayment" oninput="inputPayment = this.value;" required>
+          <span class="input-group-text">$</span>
+          <div class="invalid-feedback">
+            Please enter Down payment.
+          </div>
+        </div> 
+      </div>
+      <div class="col-12">
+        <p>Your monthly payment: <span id="result">...</span> $</p>
+        <button class="btn btn-primary" type="submit" id="submit">Calculate</button>
+      </div>
+    </form>
+    
+  </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/scriptCalc.js"></script>
+</body>
+</html>

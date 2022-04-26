@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+	<title>ElifTech School test task</title>
+</head>
+<body id="body">
+  <div class="container">
+    <h1>Mortgage calculator</h1>
+  	<ul class="nav justify-content-center">
+  	  <li class="nav-item">
+  	    <a class="nav-link active" aria-current="page" href="home.html">Banks list</a>
+  	  </li>
+  	  <li class="nav-item">
+  	    <a class="nav-link" href="calculator.html">Calcularor</a>
+  	  </li>
+  	</ul>
+
+  	<table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Bank name</th>
+          <th scope="col">Interest rate</th>
+          <th scope="col">Maximum loan</th>
+          <th scope="col">Minimum down payment</th>
+          <th scope="col">Loan term</th>
+          <th scope="col">Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody id="table">
+          <!-- TABLE AREA -->
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary add-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Bank</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Bank</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="mb-3">
+                <label for="validationDefault01" class="form-label">Bank name:</label>
+                <input type="text" class="form-control" id="validationDefault01" oninput="inputName = this.value;" required>
+              </div>             
+              <div class="col-md-6">
+                <label for="validationDefault02" class="form-label">Interest rate:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" min="0" id="validationDefault02" oninput="inputRate = this.value;" required>
+                  <span class="input-group-text">%</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault03" class="form-label">Maximum loan:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" min="0" id="validationDefault03" oninput="inputLoan = this.value;" required>
+                  <span class="input-group-text">$</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault03" class="form-label">Minimum down payment:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" min="0" id="validationDefault04" oninput="inputPayment = this.value;" required>
+                  <span class="input-group-text">$</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault03" class="form-label">Loan term:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" min="0" id="validationDefault05" oninput="inputTerm = this.value;" required>
+                  <span class="input-group-text">Months</span>
+                </div>
+              </div>              
+              <div class="modal-btns text-right">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="Submit" type="submit">Add Bank</button>
+              </div>
+            </form>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="editmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editmodalLabel">Edit Bank</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="mb-3">
+                <label for="editDefault01" class="form-label">Bank name:</label>
+                <input type="text" class="form-control" id="editDefault01" oninput="einputName = this.value;" required>
+              </div>             
+              <div class="col-md-6">
+                <label for="editDefault02" class="form-label">Interest rate:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" id="editDefault02" oninput="einputRate = this.value;" required>
+                  <span class="input-group-text">$</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="editDefault03" class="form-label">Maximum loan:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" id="editDefault03" oninput="einputLoan = this.value;" required>
+                  <span class="input-group-text">$</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="editDefault04" class="form-label">Minimum down payment:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" id="editDefault04" oninput="einputPayment = this.value;" required>
+                  <span class="input-group-text">$</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="editDefault05" class="form-label">Loan term:</label>
+                <div class="input-group">                  
+                  <input type="number" class="form-control" id="editDefault05" oninput="einputTerm = this.value;" required>
+                  <span class="input-group-text">Months</span>
+                </div>
+              </div>              
+              <div class="modal-btns text-right">
+                <button type="button" class="btn btn-danger" id="Delete" data-bs-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="SubmitSave" type="submit">Save Changes</button>
+              </div>
+            </form>
+          </div>          
+        </div>
+      </div>
+    </div>        
+
+  </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
